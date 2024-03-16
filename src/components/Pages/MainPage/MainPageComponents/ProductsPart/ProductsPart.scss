@@ -1,0 +1,9 @@
+@import url(./ProductsPartComponents/ProductsCategories/ProductsCategories.scss);
+
+.products-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 50px;
+  justify-content: center;
+  margin-top: 45px;
+}

@@ -1,19 +1,25 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { products } from "../../components/Pages/MainPage/MainPageComponents/ProductsPart/ProductsData";
 
 const initialState = {
-  value: 0,
+  selectedCategory: null,
+  products: products,
 };
 
-export const slice = createSlice({
-  name: "testSlice",
+export const categoriesSlice = createSlice({
+  name: "categories",
   initialState,
   reducers: {
-    testReducer: () => {
-      console.log("hi");
+    setSelectedCategory: (state, action) => {
+      state.selectedCategory = action.payload;
     },
   },
 });
 
-export const { testReducer } = slice.actions;
+export const { setSelectedCategory } = categoriesSlice.actions;
 
-export default slice.reducer;
+export const selectSelectedCategory = (state) =>
+  state.categories.selectedCategory;
+export const selectProducts = (state) => state.categories.products;
+
+export default categoriesSlice.reducer;

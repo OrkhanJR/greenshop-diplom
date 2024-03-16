@@ -22,9 +22,6 @@ const Header = () => {
               <Link to={"/"}>Home</Link>
             </li>
             <li>
-              <Link to={"/"}>Shop</Link>
-            </li>
-            <li>
               <Link to={"/"}>Plant Care</Link>
             </li>
             <li>

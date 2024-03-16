@@ -1,7 +1,7 @@
 import Slider from "react-slick";
-import slide_1_plant from "../../../../assets/Images/HeroPart/slide1.png";
-import slide_2_plant from "../../../../assets/Images/HeroPart/product-1.png";
-import slide_3_plant from "../../../../assets/Images/HeroPart/product-7.png";
+import slide_1_plant from "../../../../../assets/Images/HeroPart/slide1.png";
+import slide_2_plant from "../../../../../assets/Images/HeroPart/product-1.png";
+import slide_3_plant from "../../../../../assets/Images/HeroPart/product-7.png";
 import "./HeroPart.scss"
 
 const HeroPart = () => {
