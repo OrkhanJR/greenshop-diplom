@@ -1,5 +1,7 @@
 @import url(./components/MainPage/MainPage.scss);
 @import url(./_variables.scss);
+@import url(./components/MainPage/MainPageComponents/HeroPart/Slider-scss/Slick.scss);
+@import url(./components/MainPage/MainPageComponents/HeroPart/Slider-scss/Slick-theme.scss);
 
 body {
   margin: 0;

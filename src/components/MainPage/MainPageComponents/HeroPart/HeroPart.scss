@@ -1,0 +1,213 @@
+@import "../../../../_variables.scss";
+
+.hero-slide {
+  margin-top: 20px;
+  background: linear-gradient(
+    97.77deg,
+    rgba(245, 245, 245, 0.5) -23.46%,
+    rgba(245, 245, 245, 0.5) 107.51%
+  );
+  .hero-wrapper {
+    height: 518px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .left-side {
+      margin-left: 40px;
+      .hero-header {
+        margin-bottom: -7px;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 19px;
+        color: $dark-gray;
+      }
+      .slogan {
+        font-weight: 900;
+        font-size: 70px;
+        text-transform: uppercase;
+        .slogan-text {
+          margin-top: 0;
+
+          #planet-color {
+            text-transform: uppercase;
+            color: $green;
+          }
+        }
+      }
+      .hero-footer {
+        width: 557px;
+        margin-top: -65px;
+        color: $gray;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 24px;
+      }
+      .shop-button {
+        margin-top: 44px;
+        background-color: $green;
+        color: $white;
+        border-radius: 6px;
+        width: 140px;
+        height: 40px;
+        border-color: transparent;
+        cursor: pointer;
+      }
+    }
+    .right-side {
+      picture {
+        img {
+          max-width: 350px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 321px) {
+  .wrap .slick-dots {
+    bottom: 7px;
+  }
+
+  .hero-slide {
+    .hero-wrapper .left-side .shop-button {
+      margin: 0;
+    }
+    .hero-wrapper {
+      padding-left: 30px;
+      padding-right: 5px;
+      flex-wrap: nowrap;
+      align-items: center;
+      height: 360px;
+    }
+    .hero-wrapper .left-side {
+      margin-left: 10px;
+    }
+    .hero-wrapper .left-side .hero-header {
+      font-size: 15px;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+    .hero-wrapper .left-side .slogan {
+      font-size: 27px;
+    }
+    .hero-wrapper .left-side .hero-footer {
+      display: none;
+      margin-top: -35px;
+      font-size: 15px;
+      width: auto;
+    }
+
+    picture {
+      display: none;
+    }
+  }
+}
+@media (min-width: 322px) and (max-width: 426px) {
+  .wrap .slick-dots {
+    bottom: 10px;
+  }
+  .hero-slide {
+    .hero-wrapper .left-side .shop-button {
+      margin-top: 0px;
+    }
+    .hero-wrapper {
+      flex-wrap: nowrap;
+      align-items: center;
+      height: 350px;
+    }
+    .hero-wrapper .left-side {
+      margin-left: 10px;
+    }
+    .hero-wrapper .left-side .hero-header {
+      font-size: 15px;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+    .hero-wrapper .left-side .slogan {
+      font-size: 23px;
+    }
+    .hero-wrapper .left-side .hero-footer {
+      display: none;
+      margin-top: -35px;
+      font-size: 15px;
+      width: auto;
+    }
+
+    picture {
+      img {
+        height: 170px;
+        width: 170px;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1025px) {
+  .hero-slide {
+    .hero-wrapper .left-side .shop-button {
+      margin-top: 10px;
+    }
+    .hero-wrapper {
+      display: flex;
+      flex-wrap: nowrap;
+      height: 400px;
+    }
+    .hero-wrapper .left-side {
+      margin-left: 10px;
+    }
+    .hero-wrapper .left-side .hero-header {
+      font-size: 15px;
+      margin-bottom: 15px;
+    }
+    .hero-wrapper .left-side .slogan {
+      font-size: 35px;
+    }
+    .hero-wrapper .left-side .hero-footer {
+      margin-top: -35px;
+      font-size: 12px;
+      width: auto;
+    }
+    .hero-wrapper .right-side {
+      picture {
+        img {
+          width: 85%;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1026px) and (max-width: 1120px) {
+  .hero-slide {
+    .hero-wrapper .left-side .shop-button {
+      margin-top: 10px;
+    }
+    .hero-wrapper {
+      display: flex;
+      flex-wrap: nowrap;
+    }
+    .hero-wrapper .left-side {
+      margin-left: 10px;
+    }
+    .hero-wrapper .left-side .hero-header {
+      font-size: 15px;
+      margin-bottom: 15px;
+    }
+    .hero-wrapper .left-side .slogan {
+      font-size: 35px;
+    }
+    .hero-wrapper .left-side .hero-footer {
+      margin-top: -35px;
+      font-size: 15px;
+      width: auto;
+    }
+    .hero-wrapper .right-side {
+      picture {
+        img {
+          width: 85%;
+        }
+      }
+    }
+  }
+}
