@@ -1,5 +1,6 @@
 import MainPage from "./components/MainPage/MainPage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./App.scss"
 
 const router = createBrowserRouter([
   {

@@ -1,7 +1,11 @@
+import Header from "../SharedComponents/Header/Header";
+import "./MainPage.scss";
 const MainPage = () => {
   return (
     <>
-      <div>hello</div>
+      <div className="mainpage-wrapper">
+        <Header />
+      </div>
     </>
   );
 };
