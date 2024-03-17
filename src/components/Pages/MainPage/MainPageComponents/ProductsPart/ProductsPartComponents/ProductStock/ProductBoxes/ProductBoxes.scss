@@ -1,9 +1,9 @@
 @import "../../../../../../../../variables";
 
 .product-boxes-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+    display: flex;
+    gap: 70px;
+    flex-wrap: wrap;
   .product-box {
     background-color: $off-white;
     max-width: 260px;
@@ -23,4 +23,8 @@
     color: $green;
     font-weight: 600;
   }
+}
+
+.product-box:hover {
+    cursor: pointer;
 }

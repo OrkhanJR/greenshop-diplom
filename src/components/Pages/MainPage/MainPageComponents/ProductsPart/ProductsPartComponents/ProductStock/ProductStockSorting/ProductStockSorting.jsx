@@ -19,12 +19,13 @@ const ProductStockSorting = () => {
     <>
       <div className="sort-wrapper">
         <div className="categories">
+          <span>All Plants</span>
           <span>New Arrivals</span>
           <span>Sale</span>
         </div>
 
         <div className="custom-dropdown">
-            Sort By:
+          Sort By:
           <div className="selected-option" onClick={() => setIsOpen(!isOpen)}>
             {selectedOption}
             <span className={`arrow ${isOpen ? "up" : "down"}`}>
