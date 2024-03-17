@@ -1,0 +1,59 @@
+@import "../../../../../../../../variables";
+
+.sort-wrapper {
+  display: flex;
+  justify-content: space-between;
+
+  .categories {
+    display: flex;
+    gap: 40px;
+
+    span:hover {
+      color: $green;
+      cursor: pointer;
+    }
+  }
+
+  .custom-dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .selected-option {
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .arrow {
+    margin-left: 5px;
+  }
+
+  .arrow.up {
+    transform: rotate(180deg);
+  }
+
+  .options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+  }
+
+  .option {
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .option:hover {
+    background-color: #f0f0f0;
+  }
+
+  .option.selected {
+    font-weight: bold;
+    color: $green;
+  }
+}

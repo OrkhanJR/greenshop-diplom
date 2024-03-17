@@ -23,11 +23,13 @@ const ProductCategories = () => {
     <>
       <div className="categorie-box">
         <h4>Categories</h4>
-        <div className="categorie-list">
+        <div className="categorie-list-container">
           {Object.keys(productCountsByCategory).map((category) => (
             <div key={category} onClick={() => handleCategoryClick(category)}>
-              <span>{category}</span>
-              <span>({productCountsByCategory[category]})</span>
+              <div className="categorie-list">
+                <span>{category}</span>
+                <span>({productCountsByCategory[category]})</span>
+              </div>
             </div>
           ))}
         </div>

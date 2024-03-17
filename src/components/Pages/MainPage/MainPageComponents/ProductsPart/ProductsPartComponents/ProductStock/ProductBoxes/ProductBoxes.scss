@@ -1,0 +1,26 @@
+@import "../../../../../../../../variables";
+
+.product-boxes-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  .product-box {
+    background-color: $off-white;
+    max-width: 260px;
+    max-height: 300px;
+
+    .img-container {
+      width: 100%;
+      height: 100%;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .product-price {
+    color: $green;
+    font-weight: 600;
+  }
+}

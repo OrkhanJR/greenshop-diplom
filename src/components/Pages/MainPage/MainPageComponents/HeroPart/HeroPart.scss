@@ -53,6 +53,10 @@
         height: 40px;
         border-color: transparent;
         cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      .shop-button:hover {
+        background-color: darken($green, 10%);
       }
     }
     .right-side {
@@ -64,6 +68,8 @@
     }
   }
 }
+
+
 @media (max-width: 321px) {
   .wrap .slick-dots {
     bottom: 7px;

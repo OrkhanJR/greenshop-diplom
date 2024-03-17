@@ -1,8 +1,22 @@
 @import "../../../../../../../variables";
 
 .categorie-box {
-  //   background-color: $off-white;
-  background-color: yellow;
-  height: 775px;
-  padding: 10px;
+  background-color: $off-white;
+  padding: 50px;
+  min-width: 200px;
+  .categorie-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .categorie-list {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .categorie-list:hover {
+    color: $light-green;
+    cursor: pointer;
+  }
 }

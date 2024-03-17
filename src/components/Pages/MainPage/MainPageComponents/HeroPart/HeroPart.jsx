@@ -3,6 +3,7 @@ import slide_1_plant from "../../../../../assets/Images/HeroPart/slide1.png";
 import slide_2_plant from "../../../../../assets/Images/HeroPart/product-1.png";
 import slide_3_plant from "../../../../../assets/Images/HeroPart/product-7.png";
 import "./HeroPart.scss"
+import Button from "../../../../SharedComponents/Button/Button"
 
 const HeroPart = () => {
   const settings = {
@@ -63,7 +64,7 @@ const HeroPart = () => {
                     </p>
                   </div>
                   <div className="hero-footer">{slide.heroFooter}</div>
-                  <button className="shop-button">{slide.buttonText}</button>
+                  <Button className="shop-button">{slide.buttonText}</Button>
                 </div>
                 <div className="right-side">
                   <picture>

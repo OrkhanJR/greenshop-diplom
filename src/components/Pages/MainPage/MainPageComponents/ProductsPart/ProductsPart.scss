@@ -1,9 +1,10 @@
 @import url(./ProductsPartComponents/ProductsCategories/ProductsCategories.scss);
+@import url(./ProductsPartComponents/ProductStock/ProductStockSorting/ProductStockSorting.scss);
+@import url(./ProductsPartComponents/ProductStock/ProductStock.scss);
+@import url(./ProductsPartComponents/ProductStock/ProductBoxes/ProductBoxes.scss);
 
 .products-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
+  display: flex;
   gap: 50px;
-  justify-content: center;
   margin-top: 45px;
 }
