@@ -13,13 +13,17 @@ export const categoriesSlice = createSlice({
     setSelectedCategory: (state, action) => {
       state.selectedCategory = action.payload;
     },
+    setPriceRange: (state, action) => {
+      state.priceRange = action.payload;
+    },
   },
 });
 
-export const { setSelectedCategory } = categoriesSlice.actions;
+export const { setSelectedCategory, setPriceRange } = categoriesSlice.actions;
 
 export const selectSelectedCategory = (state) =>
   state.categories.selectedCategory;
 export const selectProducts = (state) => state.categories.products;
+export const selectPriceRange = (state) => state.categories.priceRange;
 
 export default categoriesSlice.reducer;

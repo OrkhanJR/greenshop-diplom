@@ -1,21 +1,65 @@
 @import "../../../../../../../../variables";
 
 .product-boxes-wrapper {
-    display: flex;
-    gap: 70px;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 70px;
+  flex-wrap: wrap;
   .product-box {
     background-color: $off-white;
     max-width: 260px;
     max-height: 300px;
+    position: relative;
 
     .img-container {
       width: 100%;
       height: 100%;
 
+      &:hover {
+        .popup {
+          opacity: 1;
+        }
+      }
+
       img {
         width: 100%;
         height: 100%;
+      }
+
+      .popup {
+        background-color: white;
+        width: 35px;
+        height: 35px;
+        position: absolute;
+        left: 100px;
+        right: 0px;
+        bottom: 20px;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .popup-img {
+          transition: 0.3s ease-in;
+        }
+
+        .popup-img-in-hover {
+          display: none;
+        }
+
+        &:hover {
+          .popup-img {
+            display: none;
+          }
+          .popup-img-in-hover {
+            display: block;
+          }
+        }
+
+        img {
+          width: 20px;
+          height: 20px;
+        }
       }
     }
   }
@@ -26,5 +70,38 @@
 }
 
 .product-box:hover {
-    cursor: pointer;
+  cursor: pointer;
+}
+
+.pagination-container {
+  margin-top: 10%;
+  .pagination {
+    display: flex;
+    gap: 10px;
+
+    li {
+      width: 35px;
+      height: 35px;
+      button {
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        background-color: white;
+        border: 1px solid #e5e5e5;
+        transition: 0.3s ease-out;
+
+        &:hover {
+          background-color: $light-green;
+        }
+      }
+
+      .active {
+        background-color: $green;
+
+        &:hover {
+          background-color: $green;
+        }
+      }
+    }
+  }
 }

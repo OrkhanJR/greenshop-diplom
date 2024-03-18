@@ -3,6 +3,7 @@ import {
   selectProducts,
   setSelectedCategory,
 } from "../../../../../../../redux/slices/slice";
+// import PriceSliderComponent from "./PriceSliderComponent/PriceSliderComponent";
 
 const ProductCategories = () => {
   const products = useSelector(selectProducts);
@@ -32,6 +33,10 @@ const ProductCategories = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="price-slider">
+          {/* <PriceSliderComponent /> */}
         </div>
       </div>
     </>
