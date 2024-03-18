@@ -5,6 +5,7 @@ import {
   selectProducts,
   setSelectedCategory,
   selectSelectedFilter,
+  selectSelectedSortingOption,
 } from "../../../../../../../../redux/slices/slice";
 import popUpCart from "../../../../../../../../assets/Images/header/cart.svg";
 import popUpCartHover from "../../../../../../../../assets/Images/header/cart-hover-icon.svg";
@@ -14,6 +15,7 @@ const productsPerPage = 9;
 const ProductBoxes = () => {
   const selectedFilter = useSelector(selectSelectedFilter);
   const selectedCategory = useSelector(selectSelectedCategory);
+  const selectedSortingOption = useSelector(selectSelectedSortingOption);
   const products = useSelector(selectProducts);
   const dispatch = useDispatch();
 
@@ -23,33 +25,6 @@ const ProductBoxes = () => {
   useEffect(() => {
     dispatch(setSelectedCategory("All"));
   }, [dispatch]);
-
-  useEffect(() => {
-    let filtered = [...products];
-    if (selectedCategory === "All") {
-      setFilteredProducts(filtered);
-    } else if (selectedCategory === "New Arrivals") {
-      filtered = filtered.filter((product) => product.newArrival);
-      setFilteredProducts(filtered);
-    } else if (selectedCategory === "Sale") {
-      filtered = filtered.filter((product) => product.sale);
-      setFilteredProducts(filtered);
-    } else {
-      filtered = filtered.filter((product) =>
-        product.category.includes(selectedCategory)
-      );
-      setFilteredProducts(filtered);
-    }
-  }, [selectedCategory, products]);
-
-  const indexOfLastProduct = currentPage * productsPerPage;
-  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-  const currentProducts = filteredProducts.slice(
-    indexOfFirstProduct,
-    indexOfLastProduct
-  );
-
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   useEffect(() => {
     let filtered = [...products];
@@ -77,8 +52,39 @@ const ProductBoxes = () => {
         );
       }
       setFilteredProducts(filtered);
+      setCurrentPage(1);
     }
-  }, [selectedCategory, selectedFilter, products]);
+  }, [selectedCategory, selectedFilter, products, selectedSortingOption]);
+
+  const sortProductsByPrice = (option) => {
+    const sortedProducts = [...filteredProducts];
+    if (option === "Price Up") {
+      sortedProducts.sort((a, b) => {
+        return parseFloat(a.sizes[0].price) - parseFloat(b.sizes[0].price);
+      });
+    } else if (option === "Price Down") {
+      sortedProducts.sort((a, b) => {
+        return parseFloat(b.sizes[0].price) - parseFloat(a.sizes[0].price);
+      });
+    }
+    setFilteredProducts(sortedProducts);
+  };
+
+  useEffect(() => {
+    if (selectedSortingOption !== "Default") {
+      sortProductsByPrice(selectedSortingOption);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedSortingOption]);
+
+  const indexOfLastProduct = currentPage * productsPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+  const currentProducts = filteredProducts.slice(
+    indexOfFirstProduct,
+    indexOfLastProduct
+  );
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
     <>

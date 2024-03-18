@@ -3,7 +3,7 @@ import ArrowDown from "../../../../../../../../assets/Images/products/Arrow-Down
 import { useDispatch } from "react-redux";
 import {
   setSelectedSortingOption,
-  setSelectedFilter
+  setSelectedFilter,
 } from "../../../../../../../../redux/slices/slice";
 
 const ProductStockSorting = () => {
@@ -27,8 +27,12 @@ const ProductStockSorting = () => {
     <>
       <div className="sort-wrapper">
         <div className="categories">
-          <span onClick={() => dispatch(setSelectedFilter("All Plants"))}>All Plants</span>
-          <span onClick={() => dispatch(setSelectedFilter("New Arrivals"))}>New Arrivals</span>
+          <span onClick={() => dispatch(setSelectedFilter("All Plants"))}>
+            All Plants
+          </span>
+          <span onClick={() => dispatch(setSelectedFilter("New Arrivals"))}>
+            New Arrivals
+          </span>
           <span onClick={() => dispatch(setSelectedFilter("Sale"))}>Sale</span>
         </div>
 

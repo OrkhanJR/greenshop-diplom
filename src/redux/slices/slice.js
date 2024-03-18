@@ -24,6 +24,9 @@ export const categoriesSlice = createSlice({
     setPriceRange: (state, action) => {
       state.priceRange = action.payload;
     },
+    setProducts: (state, action) => {
+      state.products = action.payload;
+    },
   },
 });
 
@@ -32,6 +35,7 @@ export const {
   setSelectedFilter,
   setSelectedSortingOption,
   setPriceRange,
+  setProducts,
 } = categoriesSlice.actions;
 
 export const selectSelectedCategory = (state) =>
@@ -40,5 +44,6 @@ export const selectProducts = (state) => state.categories.products;
 export const selectSelectedFilter = (state) => state.categories.selectedFilter;
 export const selectSelectedSortingOption = (state) =>
   state.categories.selectedSortingOption;
+export const selectPriceRange = (state) => state.categories.priceRange;
 
 export default categoriesSlice.reducer;
