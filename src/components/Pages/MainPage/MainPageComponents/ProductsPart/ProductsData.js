@@ -29,7 +29,7 @@ export const products = [
     discountPercentage: 0.2,
     category: ["House Plants", "Terrariums"],
     newArrival: true,
-    sale: false,
+    sale: true,
     shortDescription:
       "The Barberton Daisy is a beautiful flowering plant that adds a vibrant touch to any space. It comes in three different sizes and is perfect for both indoor and outdoor settings.",
     tags: ["Home", "Garden", "Plants"],

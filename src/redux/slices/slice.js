@@ -3,6 +3,8 @@ import { products } from "../../components/Pages/MainPage/MainPageComponents/Pro
 
 const initialState = {
   selectedCategory: null,
+  selectedFilter: "all",
+  selectedSortingOption: "Default",
   products: products,
 };
 
@@ -13,17 +15,30 @@ export const categoriesSlice = createSlice({
     setSelectedCategory: (state, action) => {
       state.selectedCategory = action.payload;
     },
+    setSelectedFilter: (state, action) => {
+      state.selectedFilter = action.payload;
+    },
+    setSelectedSortingOption: (state, action) => {
+      state.selectedSortingOption = action.payload;
+    },
     setPriceRange: (state, action) => {
       state.priceRange = action.payload;
     },
   },
 });
 
-export const { setSelectedCategory, setPriceRange } = categoriesSlice.actions;
+export const {
+  setSelectedCategory,
+  setSelectedFilter,
+  setSelectedSortingOption,
+  setPriceRange,
+} = categoriesSlice.actions;
 
 export const selectSelectedCategory = (state) =>
   state.categories.selectedCategory;
 export const selectProducts = (state) => state.categories.products;
-export const selectPriceRange = (state) => state.categories.priceRange;
+export const selectSelectedFilter = (state) => state.categories.selectedFilter;
+export const selectSelectedSortingOption = (state) =>
+  state.categories.selectedSortingOption;
 
 export default categoriesSlice.reducer;

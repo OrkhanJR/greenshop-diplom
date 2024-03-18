@@ -2,8 +2,8 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   selectProducts,
   setSelectedCategory,
+  setSelectedFilter,
 } from "../../../../../../../redux/slices/slice";
-// import PriceSliderComponent from "./PriceSliderComponent/PriceSliderComponent";
 
 const ProductCategories = () => {
   const products = useSelector(selectProducts);
@@ -11,6 +11,7 @@ const ProductCategories = () => {
 
   const handleCategoryClick = (category) => {
     dispatch(setSelectedCategory(category));
+    dispatch(setSelectedFilter("all"));
   };
 
   const productCountsByCategory = products.reduce((counts, product) => {
@@ -33,10 +34,6 @@ const ProductCategories = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="price-slider">
-          {/* <PriceSliderComponent /> */}
         </div>
       </div>
     </>

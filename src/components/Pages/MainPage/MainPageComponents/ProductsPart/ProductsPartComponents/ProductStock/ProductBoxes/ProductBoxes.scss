@@ -13,6 +13,35 @@
     .img-container {
       width: 100%;
       height: 100%;
+      position: relative;
+
+      .product-discount {
+        position: absolute;
+        text-transform: uppercase;
+        color: white;
+        padding: 5px;
+        padding-left: 10px;
+        background-color: $green;
+        box-shadow: 0 1.8px 3.2px rgba(0, 0, 0, 0.1),
+          0 1.7px 10.3px rgba(0, 0, 0, 0.065), 0 3.5px 10px rgba(0, 0, 0, 0.05),
+          0 7.5px 7px rgba(0, 0, 0, 0.05);
+      }
+
+      .new-product {
+        position: absolute;
+        right: 0;
+        background-color: rgb(0, 94, 255);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 3px;
+        box-shadow: 0 1.8px 3.2px rgba(0, 0, 0, 0.1),
+          0 1.7px 10.3px rgba(0, 0, 0, 0.065), 0 3.5px 10px rgba(0, 0, 0, 0.05),
+          0 7.5px 7px rgba(0, 0, 0, 0.05);
+        margin-left: 10px;
+        padding: 2px 6px;
+        color: white;
+      }
 
       &:hover {
         .popup {
@@ -66,6 +95,13 @@
   .product-price {
     color: $green;
     font-weight: 600;
+    display: flex;
+    gap: 10px;
+  }
+
+  .old-price {
+    color: lightgrey;
+    text-decoration: line-through;
   }
 }
 
@@ -97,6 +133,7 @@
 
       .active {
         background-color: $green;
+        color: white;
 
         &:hover {
           background-color: $green;

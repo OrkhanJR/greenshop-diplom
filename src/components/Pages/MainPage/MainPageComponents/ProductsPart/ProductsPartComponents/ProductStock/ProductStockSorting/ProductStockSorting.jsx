@@ -1,9 +1,15 @@
 import { useState } from "react";
 import ArrowDown from "../../../../../../../../assets/Images/products/Arrow-Down.svg";
+import { useDispatch } from "react-redux";
+import {
+  setSelectedSortingOption,
+  setSelectedFilter
+} from "../../../../../../../../redux/slices/slice";
 
 const ProductStockSorting = () => {
   const [selectedOption, setSelectedOption] = useState("Default");
   const [isOpen, setIsOpen] = useState(false);
+  const dispatch = useDispatch();
 
   const options = [
     { label: "Default", value: "Default" },
@@ -14,14 +20,16 @@ const ProductStockSorting = () => {
   const handleOptionClick = (value) => {
     setSelectedOption(value);
     setIsOpen(false);
+    dispatch(setSelectedSortingOption(value));
   };
+
   return (
     <>
       <div className="sort-wrapper">
         <div className="categories">
-          <span>All Plants</span>
-          <span>New Arrivals</span>
-          <span>Sale</span>
+          <span onClick={() => dispatch(setSelectedFilter("All Plants"))}>All Plants</span>
+          <span onClick={() => dispatch(setSelectedFilter("New Arrivals"))}>New Arrivals</span>
+          <span onClick={() => dispatch(setSelectedFilter("Sale"))}>Sale</span>
         </div>
 
         <div className="custom-dropdown">
