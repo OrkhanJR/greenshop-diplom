@@ -6,7 +6,7 @@ import {
   setSelectedCategory,
   selectSelectedFilter,
   selectSelectedSortingOption,
-  setSelectedSortingOption,
+ 
 } from "../../../../../../../../redux/slices/slice";
 import popUpCart from "../../../../../../../../assets/Images/header/cart.svg";
 import popUpCartHover from "../../../../../../../../assets/Images/header/cart-hover-icon.svg";
@@ -35,7 +35,6 @@ const ProductBoxes = () => {
       } else if (selectedFilter === "Sale") {
         filtered = filtered.filter((product) => product.sale);
       }
-      setFilteredProducts(filtered);
     } else {
       if (selectedFilter === "New Arrivals") {
         filtered = filtered.filter(
@@ -52,36 +51,33 @@ const ProductBoxes = () => {
           product.category.includes(selectedCategory)
         );
       }
-      setFilteredProducts(filtered);
-      setCurrentPage(1);
     }
-  }, [selectedCategory, selectedFilter, products]);
-
-  useEffect(() => {
-    console.log("Setting sorting option to Default");
-    dispatch(setSelectedSortingOption("Default"));
-  }, [selectedCategory, selectedFilter, dispatch]);
-
-  const sortProductsByPrice = (option) => {
-    const sortedProducts = [...filteredProducts];
-    if (option === "Price Up") {
-      sortedProducts.sort((a, b) => {
-        return parseFloat(a.sizes[0].price) - parseFloat(b.sizes[0].price);
+  
+    if (selectedSortingOption === "Price Up") {
+      filtered.sort((a, b) => {
+        const priceA = a.sale
+          ? parseFloat(a.sizes[0].price) * (1 - a.discountPercentage)
+          : parseFloat(a.sizes[0].price);
+        const priceB = b.sale
+          ? parseFloat(b.sizes[0].price) * (1 - b.discountPercentage)
+          : parseFloat(b.sizes[0].price);
+        return priceA - priceB;
       });
-    } else if (option === "Price Down") {
-      sortedProducts.sort((a, b) => {
-        return parseFloat(b.sizes[0].price) - parseFloat(a.sizes[0].price);
+    } else if (selectedSortingOption === "Price Down") {
+      filtered.sort((a, b) => {
+        const priceA = a.sale
+          ? parseFloat(a.sizes[0].price) * (1 - a.discountPercentage)
+          : parseFloat(a.sizes[0].price);
+        const priceB = b.sale
+          ? parseFloat(b.sizes[0].price) * (1 - b.discountPercentage)
+          : parseFloat(b.sizes[0].price);
+        return priceB - priceA;
       });
     }
-    setFilteredProducts(sortedProducts);
-  };
-
-  useEffect(() => {
-    if (selectedSortingOption !== "Default") {
-      sortProductsByPrice(selectedSortingOption);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedSortingOption]);
+  
+    setFilteredProducts(filtered);
+    setCurrentPage(1);
+  }, [selectedCategory, selectedFilter, products, selectedSortingOption]);
 
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;

@@ -1,0 +1,104 @@
+@import '/src/variables';
+
+.blog_wrapper {
+  padding-top: 138px;
+  h2 {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 16px;
+    text-align: center;
+    color: $dark-gray;
+  }
+  .title {
+    display: flex;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: $gray;
+  }
+
+  .blog_cards {
+    display: flex;
+    gap: 44px;
+    margin-top: 35px;
+    justify-content: center;
+
+    .card {
+      background-color: $off-white;
+      width: 268px;
+      height: 362.17px;
+      .main {
+        padding: 10px;
+        .card_img {
+          width: 100%;
+        }
+        .date {
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 16px;
+          color: $green;
+        }
+        .card_header {
+          color: $dark-gray;
+          font-weight: 700;
+          font-size: 20px;
+          line-height: 26px;
+        }
+        .card_main_text {
+          color: $gray;
+          margin-top: 4px;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 22px;
+        }
+        .link {
+          margin-top: 9px;
+
+          a {
+            text-decoration: none;
+            color: $dark-gray;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 16px;
+            display: flex;
+            gap: 7px;
+
+              img{
+                margin-top: 2px;
+              }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 426px) {
+  .blog_wrapper .title{
+    padding: 5px;
+    font-size: 14px;
+  }
+  .blog_wrapper .blog_cards{
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (min-width: 427px) and (max-width: 768px){
+  .blog_wrapper .blog_cards{
+   display: flex;
+   flex-direction: column;
+   justify-items: center;
+   gap: 24px;
+  }
+}
+
+@media (max-width: 1025px){
+  .blog_wrapper .blog_cards{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    gap: 35px;
+   }
+}
