@@ -6,6 +6,7 @@ import {
   setSelectedCategory,
   selectSelectedFilter,
   selectSelectedSortingOption,
+  setSelectedSortingOption,
 } from "../../../../../../../../redux/slices/slice";
 import popUpCart from "../../../../../../../../assets/Images/header/cart.svg";
 import popUpCartHover from "../../../../../../../../assets/Images/header/cart-hover-icon.svg";
@@ -54,7 +55,12 @@ const ProductBoxes = () => {
       setFilteredProducts(filtered);
       setCurrentPage(1);
     }
-  }, [selectedCategory, selectedFilter, products, selectedSortingOption]);
+  }, [selectedCategory, selectedFilter, products]);
+
+  useEffect(() => {
+    console.log("Setting sorting option to Default");
+    dispatch(setSelectedSortingOption("Default"));
+  }, [selectedCategory, selectedFilter, dispatch]);
 
   const sortProductsByPrice = (option) => {
     const sortedProducts = [...filteredProducts];
@@ -74,7 +80,7 @@ const ProductBoxes = () => {
     if (selectedSortingOption !== "Default") {
       sortProductsByPrice(selectedSortingOption);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedSortingOption]);
 
   const indexOfLastProduct = currentPage * productsPerPage;

@@ -1,15 +1,23 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ArrowDown from "../../../../../../../../assets/Images/products/Arrow-Down.svg";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   setSelectedSortingOption,
   setSelectedFilter,
+  selectSelectedSortingOption,
 } from "../../../../../../../../redux/slices/slice";
 
 const ProductStockSorting = () => {
-  const [selectedOption, setSelectedOption] = useState("Default");
-  const [isOpen, setIsOpen] = useState(false);
   const dispatch = useDispatch();
+  const selectedSortingOption = useSelector(selectSelectedSortingOption);
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    setSelectedOption(selectedSortingOption);
+  }, [selectedSortingOption]);
+
+  const [selectedOption, setSelectedOption] = useState("Default");
 
   const options = [
     { label: "Default", value: "Default" },

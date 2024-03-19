@@ -4,6 +4,7 @@ import {
   setSelectedCategory,
   setSelectedFilter,
 } from "../../../../../../../redux/slices/slice";
+import banner from "../../../../../../../assets/Images/products/SuperSaleBanner.png"
 
 const ProductCategories = () => {
   const products = useSelector(selectProducts);
@@ -34,6 +35,9 @@ const ProductCategories = () => {
               </div>
             </div>
           ))}
+        </div>
+        <div className="banner">
+          <img src={banner} alt="Super Sale" />
         </div>
       </div>
     </>
