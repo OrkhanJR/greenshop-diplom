@@ -10,6 +10,7 @@ import {
 } from "../../../../../../../../redux/slices/slice";
 import popUpCart from "../../../../../../../../assets/Images/header/cart.svg";
 import popUpCartHover from "../../../../../../../../assets/Images/header/cart-hover-icon.svg";
+import {  useNavigate } from "react-router-dom";
 
 const productsPerPage = 9;
 
@@ -87,12 +88,17 @@ const ProductBoxes = () => {
   );
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const navigate = useNavigate();
+
+  const navigateToView = (productId) => {
+    navigate(`/products/${productId}/details`)
+  }
 
   return (
     <>
       <div className="product-boxes-wrapper">
         {currentProducts.map((product) => (
-          <div key={product.id} className="product-box">
+          <div key={product.id} className="product-box"  onClick={() => {navigateToView(product.id)}}>
             <div className="img-container">
               {product.sale && (
                 <div className="product-discount">

@@ -1,0 +1,11 @@
+@import "../../../../../variables";
+
+.image {
+  width: 480px;
+  height: 480px;
+background-color: $off-white;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
