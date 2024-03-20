@@ -1,0 +1,59 @@
+@import "../../../variables";
+
+.footer-wrapper {
+  margin-top: 100px;
+  width: 100%;
+  max-width: 1440px;
+  background-color: $off-white;
+
+  .icon-boxes {
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    .icon {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      width: 250px;
+      border-right: 1px solid rgba(70, 163, 88, 0.1);
+      .title {
+        font-weight: 600;
+      }
+      span {
+        color: $gray;
+        font-size: 14px;
+        line-height: 22px;
+        text-align: left;
+      }
+      img {
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
+      }
+    }
+  }
+  .contacts-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 25px;
+    background-color: rgba(70, 163, 88, 0.1);
+    height: 90px;
+    color: #3d3d3d;
+    .contacts {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+
+      a {
+        text-decoration: none;
+        color: #3d3d3d;
+      }
+    }
+  }
+  .footer-bottom {
+    margin-top: 10px;
+    text-align: center;
+    color: #3d3d3d;
+  }
+}

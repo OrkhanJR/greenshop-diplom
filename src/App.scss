@@ -2,6 +2,8 @@
 @import "./_variables.scss";
 @import url(./components/Pages/MainPage/MainPageComponents/HeroPart/Slider-scss/Slick.scss);
 @import url(./components/Pages/MainPage/MainPageComponents/HeroPart/Slider-scss/Slick-theme.scss);
+@import url(./components/SharedComponents/Header/Header.scss);
+@import url(./components/SharedComponents/Footer/Footer.scss);
 
 body {
   margin: 0;
