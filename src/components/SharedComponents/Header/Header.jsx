@@ -11,18 +11,16 @@ const Header = () => {
     navigate(`/cart`);
   };
 
+  const navigateToHome = () => {
+    navigate(`/`);
+  };
+
   const totalItems = useSelector(selectTotalItems);
   return (
     <>
       <div className="header-wrapper">
-        <div className="logo">
-          <img
-            onClick={() => {
-              <Link to={"/"} />;
-            }}
-            src={logo}
-            alt="logo"
-          />
+        <div className="logo" onClick={navigateToHome}>
+          <img src={logo} alt="logo" />
         </div>
         <div className="links-wrapper">
           <ul className="links">

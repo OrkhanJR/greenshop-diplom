@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { products } from "../../components/Pages/MainPage/MainPageComponents/ProductsPart/ProductsData";
+// import { products } from "../../components/Pages/MainPage/MainPageComponents/ProductsPart/ProductsData";
 
 const getSavedCartItems = () => {
   const savedCartItems = localStorage.getItem("cartItems");
