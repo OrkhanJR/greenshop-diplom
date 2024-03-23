@@ -1,9 +1,17 @@
 import logo from "../../../assets/Images/Logo/Logo.svg";
 import cart from "../../../assets/Images/header/cart.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "../Button/Button";
+import { useSelector } from "react-redux";
+import { selectTotalItems } from "../../../redux/slices/cartSlice";
 
 const Header = () => {
+  const navigate = useNavigate();
+  const navigateToCart = () => {
+    navigate(`/cart`);
+  };
+
+  const totalItems = useSelector(selectTotalItems);
   return (
     <>
       <div className="header-wrapper">
@@ -31,7 +39,10 @@ const Header = () => {
         </div>
 
         <div className="login">
-          <img className="cart" src={cart} alt="cart" />
+          <div className="cart" onClick={navigateToCart}>
+            <span className="cart-count">{totalItems}</span>
+            <img src={cart} alt="cart" />
+          </div>
           <Button className="login-button">Login</Button>
         </div>
       </div>

@@ -6,11 +6,11 @@ import {
   setSelectedCategory,
   selectSelectedFilter,
   selectSelectedSortingOption,
- 
 } from "../../../../../../../../redux/slices/slice";
 import popUpCart from "../../../../../../../../assets/Images/header/cart.svg";
 import popUpCartHover from "../../../../../../../../assets/Images/header/cart-hover-icon.svg";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { addToCart } from "../../../../../../../../redux/slices/cartSlice";
 
 const productsPerPage = 9;
 
@@ -53,7 +53,7 @@ const ProductBoxes = () => {
         );
       }
     }
-  
+
     if (selectedSortingOption === "Price Up") {
       filtered.sort((a, b) => {
         const priceA = a.sale
@@ -75,7 +75,7 @@ const ProductBoxes = () => {
         return priceB - priceA;
       });
     }
-  
+
     setFilteredProducts(filtered);
     setCurrentPage(1);
   }, [selectedCategory, selectedFilter, products, selectedSortingOption]);
@@ -91,14 +91,27 @@ const ProductBoxes = () => {
   const navigate = useNavigate();
 
   const navigateToView = (productId) => {
-    navigate(`/products/${productId}/details`)
-  }
+    navigate(`/products/${productId}/details`);
+  };
+
+  const handleAddToCart = (product) => {
+    const smallSize = product.sizes.find((size) => size.size === "S");
+
+    if (smallSize) {
+      const price = product.sale
+        ? parseFloat(smallSize.price) * (1 - product.discountPercentage)
+        : parseFloat(smallSize.price);
+      dispatch(
+        addToCart({ ...product, selectedSize: smallSize, price, quantity: 1 })
+      );
+    }
+  };
 
   return (
     <>
       <div className="product-boxes-wrapper">
         {currentProducts.map((product) => (
-          <div key={product.id} className="product-box"  onClick={() => {navigateToView(product.id)}}>
+          <div key={product.id} className="product-box">
             <div className="img-container">
               {product.sale && (
                 <div className="product-discount">
@@ -107,7 +120,7 @@ const ProductBoxes = () => {
               )}
               {product.newArrival && <div className="new-product">New</div>}
               <img src={product.photos[0]} alt={product.name} />
-              <div className="popup">
+              <div className="popup" onClick={() => handleAddToCart(product)}>
                 <img className="popup-img" src={popUpCart} alt="cart" />
                 <img
                   className="popup-img-in-hover"
@@ -116,9 +129,21 @@ const ProductBoxes = () => {
                 />
               </div>
             </div>
-            <div className="product-title">{product.name}</div>
+            <div
+              className="product-title"
+              onClick={() => {
+                navigateToView(product.id);
+              }}
+            >
+              {product.name}
+            </div>
 
-            <div className="product-price">
+            <div
+              className="product-price"
+              onClick={() => {
+                navigateToView(product.id);
+              }}
+            >
               {product.sale ? (
                 <>
                   <span className="new-price">
