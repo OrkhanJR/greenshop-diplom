@@ -21,9 +21,10 @@ const ProductInfo = () => {
       selectedSize.price,
       product.discountPercentage
     );
-    dispatch(
-      addToCart({ ...product, selectedSize, price, quantity: quantity })
-    );
+
+    for (let i = 0; i < quantity; i++) {
+      dispatch(addToCart({ ...product, selectedSize, price, quantity: 1 }));
+    }
   };
 
   const handleQuantityChange = (newQuantity) => {

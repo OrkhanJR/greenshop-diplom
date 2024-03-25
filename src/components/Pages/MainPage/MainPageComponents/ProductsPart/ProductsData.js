@@ -26,7 +26,7 @@ export const products = [
       { size: "L", price: "159.00" },
     ],
     photos: [product1, product1_2, product1_3, product1_4],
-    discountPercentage: 0.2,
+    discountPercentage: 0.7,
     category: ["House Plants", "Terrariums"],
     newArrival: true,
     sale: true,
