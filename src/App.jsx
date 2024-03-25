@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.scss";
 import ProductViewPage from "./components/Pages/ProductViewPage/ProductViewPage";
 import CartPage from "./components/Pages/CartPage/CartPage";
+import ErrorPage from "./components/Pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
@@ -10,13 +11,14 @@ const router = createBrowserRouter([
     element: <MainPage />,
   },
   {
-    path: 'products/:productId/details',
+    path: "products/:productId/details",
     element: <ProductViewPage />,
+    errorElement: <ErrorPage />,
   },
   {
     path: "cart",
-    element: <CartPage />
-  }
+    element: <CartPage />,
+  },
 ]);
 
 const App = () => {
