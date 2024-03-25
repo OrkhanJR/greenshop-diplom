@@ -5,7 +5,7 @@ import {
   selectTotalPrice,
 } from "../../../../redux/slices/cartSlice";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const CartTotals = () => {
   const cartItems = useSelector(selectItems);
@@ -13,6 +13,7 @@ const CartTotals = () => {
   const totalPrice = useSelector(selectTotalPrice);
   const [coupon, setCoupon] = useState("");
   const [discountedPrice, setDiscountedPrice] = useState(totalPrice);
+  const navigate = useNavigate();
 
   const totalPriceWithShipping = () => {
     return discountedPrice + 16;
@@ -20,18 +21,22 @@ const CartTotals = () => {
 
   const handleCoupon = () => {
     if (coupon === "itstep") {
-      const discountPrice = totalPrice * 0.5; 
-      setDiscountedPrice(totalPrice - discountPrice); 
+      const discountPrice = totalPrice * 0.5;
+      setDiscountedPrice(totalPrice - discountPrice);
     }
   };
 
-  useEffect(()=> {
-    setDiscountedPrice(totalPrice)
-  }, [cartItems, totalPrice])
+  useEffect(() => {
+    setDiscountedPrice(totalPrice);
+  }, [cartItems, totalPrice]);
 
   if (cartItems.length === 0) {
     return null;
   }
+
+  const checkoutNav = () => {
+    navigate(`/cart/checkout`);
+  };
   return (
     <>
       <div className="cart-summary">
@@ -57,7 +62,8 @@ const CartTotals = () => {
             </div>
 
             <div className="prices">
-              <p>Coupon Discount</p> <span>(-) {(totalPrice - discountedPrice).toFixed(2)}</span>
+              <p>Coupon Discount</p>{" "}
+              <span>(-) {(totalPrice - discountedPrice).toFixed(2)}</span>
             </div>
             <div className="prices">
               <p>Shipping</p> <span className="shipping-price">$16.00</span>
@@ -68,7 +74,14 @@ const CartTotals = () => {
             </div>
           </div>
           <div className="buttons">
-            <button className="checkout-button">Proceed To Checkout</button>
+            <button
+              className="checkout-button"
+              onClick={() => {
+                checkoutNav();
+              }}
+            >
+              Proceed To Checkout
+            </button>
             <Link to={`/`} className="continue-shopping-link">
               Continue Shopping
             </Link>

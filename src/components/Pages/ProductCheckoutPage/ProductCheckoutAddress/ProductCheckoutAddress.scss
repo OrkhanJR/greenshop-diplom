@@ -1,0 +1,46 @@
+@import "../../../../variables";
+
+.address-wrapper {
+  display: flex;
+  flex-direction: column;
+  .inputs {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 50px;
+    max-width: 400px;
+
+    .flex {
+        display: flex;
+        gap: 150px;
+    }
+
+    label {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      img {
+        width: 10px;
+        height: 10px;
+      }
+
+      input {
+        width: 350px;
+        height: 15px;
+        border: 1px solid #eaeaea;
+        padding: 15px;
+      }
+      input::placeholder {
+        color: #a5a5a5;
+      }
+
+      select {
+        width: 350px;
+        height: 40px;
+        border: 1px solid #eaeaea;
+        cursor: pointer;
+      }
+    }
+  }
+}
