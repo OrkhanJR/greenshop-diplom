@@ -8,8 +8,9 @@
   .cart-product {
     background-color: $off-white;
     display: flex;
-    gap: 40px;
+    gap: 20px;
     align-items: center;
+    padding: 0 10px;
     .product-image {
       width: 70px;
       height: 70px;
@@ -20,15 +21,21 @@
       }
     }
 
+    .product-name {
+      width: 150px;
+    }
+
     .product-price {
       color: $green;
       font-weight: 500;
+      width: 110px;
     }
 
     .quantity {
       display: flex;
       align-items: center;
       gap: 10px;
+      width: 170px;
       .count-button {
         border-radius: 50%;
         border: 1px solid $green;

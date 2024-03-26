@@ -1,28 +1,7 @@
 @import "../../../../variables";
 
-// .cart-totals-wrapper {
-//   width: 350px;
-//   height: 350px;
-//   background-color: red;
-//   display: flex;
-//   flex-direction: column;
-//   gap: 10px;
-//   padding: 10px;
-//   .coupon-input {
-//     height: 40px;
-//     input {
-//       width: 80%;
-//       height: 100%;
-//       border: 1px solid $green;
-//       border-radius: 3px;
-//       padding: 5px;
-//     }
-//   }
-// }
-
 .cart-summary {
   width: 330px;
-  height: 360px;
 
   .line {
     border-bottom: 1px solid $green;
@@ -30,7 +9,7 @@
 
   .cart-main {
     background-color: $off-white;
-    height: 370px;
+    max-height: 370px;
     padding: 10px;
     .coupon {
       font-weight: 400;

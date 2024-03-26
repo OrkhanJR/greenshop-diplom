@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { selectProducts } from "../../../../../redux/slices/slice";
 import { addToCart } from "../../../../../redux/slices/cartSlice";
 
@@ -15,6 +15,13 @@ const ProductInfo = () => {
   const [selectedSize, setSelectedSize] = useState(
     product ? product.sizes[0] : null
   );
+
+  const navigate = useNavigate();
+
+  const handleBuyNow = () => {
+    handleAddToCart();
+    navigate("/cart/checkout");
+  };
 
   const handleAddToCart = () => {
     const price = calculatePrice(
@@ -96,7 +103,9 @@ const ProductInfo = () => {
               </button>
             </div>
             <div className="checkout-wrapper">
-              <button className="buy-now">Buy Now</button>
+              <button className="buy-now" onClick={handleBuyNow}>
+                Buy Now
+              </button>
               <button className="add-to-cart" onClick={handleAddToCart}>
                 Add To Cart
               </button>

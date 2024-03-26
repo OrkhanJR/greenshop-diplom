@@ -11,8 +11,8 @@
     max-width: 400px;
 
     .flex {
-        display: flex;
-        gap: 150px;
+      display: flex;
+      gap: 150px;
     }
 
     label {
@@ -40,6 +40,24 @@
         height: 40px;
         border: 1px solid #eaeaea;
         cursor: pointer;
+      }
+    }
+  }
+  .order-button {
+    margin-top: 20px;
+    button {
+      width: 320px;
+      height: 40px;
+      background-color: $green;
+      border: 1px solid $green;
+      border-radius: 6px;
+      color: white;
+      font-weight: 500;
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:hover {
+        background-color: darken($green, 10%);
       }
     }
   }
