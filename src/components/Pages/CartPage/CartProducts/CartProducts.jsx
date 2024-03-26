@@ -40,7 +40,9 @@ const CartProducts = () => {
                 <img src={item.photos[0]} alt="product" />
               </div>
               <p className="product-name">{item.name}</p>
-              <p className="product-price">Price: ${(Number(item.price) || 0).toFixed(2)} </p>
+              <p className="product-price">
+                Price: ${(Number(item.price) || 0).toFixed(2)}{" "}
+              </p>
               <div className="quantity">
                 Quantity:
                 <button
