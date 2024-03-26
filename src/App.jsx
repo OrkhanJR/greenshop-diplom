@@ -5,6 +5,7 @@ import ProductViewPage from "./components/Pages/ProductViewPage/ProductViewPage"
 import CartPage from "./components/Pages/CartPage/CartPage";
 import ErrorPage from "./components/Pages/ErrorPage/ErrorPage";
 import ProductCheckoutPage from "./components/Pages/ProductCheckoutPage/ProductCheckoutPage";
+import BlogPage from "./components/Pages/BlogPage/BlogPage";
 
 const router = createBrowserRouter([
   {
@@ -22,8 +23,12 @@ const router = createBrowserRouter([
   },
   {
     path: "/cart/checkout",
-    element: <ProductCheckoutPage />
-  }
+    element: <ProductCheckoutPage />,
+  },
+  {
+    path: "/blog",
+    element: <BlogPage />,
+  },
 ]);
 
 const App = () => {

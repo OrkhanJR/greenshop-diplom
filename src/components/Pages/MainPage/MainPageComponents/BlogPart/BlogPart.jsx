@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import card1 from "../../../../../assets/Images/BlogPart/card1.png";
 import card2 from "../../../../../assets/Images/BlogPart/card2.png";
 import card3 from "../../../../../assets/Images/BlogPart/card3.png";
@@ -51,9 +52,9 @@ const BlogPart = () => {
               <div className="card_header">{blogCard.header}</div>
               <div className="card_main_text">{blogCard.main}</div>
               <div className="link">
-                <a href="/">
+                <Link to={"/blog#room"}>
                   Read More <img src={link_arrow} alt="/" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
