@@ -45,7 +45,7 @@ export const products = [
       { size: "M", price: "189.00" },
     ],
     photos: [product2],
-    discountPercentage: 0.3,
+    discountPercentage: 0.1,
     category: ["Potter Plants"],
     newArrival: false,
     sale: true,
