@@ -45,10 +45,10 @@ export const products = [
       { size: "M", price: "189.00" },
     ],
     photos: [product2],
-    discountPercentage: 0,
+    discountPercentage: 0.3,
     category: ["Potter Plants"],
     newArrival: false,
-    sale: false,
+    sale: true,
     shortDescription:
       "The Angel Wing Begonia is a stunning foliage plant with unique angelic-shaped leaves. It is available in two sizes and adds a touch of elegance to any room.",
     tags: ["Home", "Garden", "Plants", "Potter Plants"],

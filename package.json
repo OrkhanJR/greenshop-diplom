@@ -2,7 +2,6 @@
   "name": "greenshop-diplom",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://OrkhanJR.github.io/greenshop-diplom",
   "dependencies": {
     "@emotion/babel-plugin": "^11.11.0",
     "@emotion/react": "^11.11.4",
