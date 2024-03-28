@@ -27,9 +27,9 @@ const Header = () => {
             <li>
               <Link to={"/"}>Home</Link>
             </li>
-            <li>
+            {/* <li>
               <Link to={"/"}>Plant Care</Link>
-            </li>
+            </li> */}
             <li>
               <Link to={"/blog"}>Blogs</Link>
             </li>
@@ -41,7 +41,7 @@ const Header = () => {
             <span className="cart-count">{totalItems}</span>
             <img src={cart} alt="cart" />
           </div>
-          <Button className="login-button">Login</Button>
+          
         </div>
       </div>
       <hr />
