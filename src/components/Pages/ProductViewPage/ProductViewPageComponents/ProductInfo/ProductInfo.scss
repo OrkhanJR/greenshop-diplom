@@ -1,7 +1,5 @@
 @import "../../../../../variables";
 
-
-
 button {
   cursor: pointer;
 }
@@ -20,6 +18,17 @@ button {
 
   .about {
     width: 100%;
+    .title {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      span {
+        color: $green;
+        font-weight: 700;
+        font-size: 18px;
+      }
+    }
     .price {
       color: $green;
       font-weight: 700;

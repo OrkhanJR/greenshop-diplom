@@ -58,6 +58,11 @@ const ProductInfo = () => {
         <div className="about">
           <div className="title">
             <h3>{product.name}</h3>
+            {product.sale === true ? (
+              <span>Sale {product.discountPercentage * 100}% OFF </span>
+            ) : (
+              ""
+            )}
           </div>
 
           <div className="price">
