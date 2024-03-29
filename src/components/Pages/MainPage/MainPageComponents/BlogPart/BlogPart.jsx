@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import card1 from "../../../../../assets/Images/BlogPart/card1.png";
 import card2 from "../../../../../assets/Images/BlogPart/card2.png";
 import card3 from "../../../../../assets/Images/BlogPart/card3.png";
@@ -33,6 +33,12 @@ const BlogPart = () => {
     },
   ];
 
+  const navigate = useNavigate();
+
+  const handleNavigate = () => {
+    navigate("/blog");
+  };
+
   return (
     <div className="blog_wrapper">
       <h2>Our Blog Posts</h2>
@@ -47,14 +53,12 @@ const BlogPart = () => {
             <div className="card_img">
               <img src={blogCard.image} alt="" />
             </div>
-            <div className="main">
+            <div className="main" onClick={() => handleNavigate()}>
               <span className="date">{blogCard.date}</span>
               <div className="card_header">{blogCard.header}</div>
               <div className="card_main_text">{blogCard.main}</div>
               <div className="link">
-                <Link to={"/blog#room"}>
-                  Read More <img src={link_arrow} alt="/" />
-                </Link>
+                Read More <img src={link_arrow} alt="/" />
               </div>
             </div>
           </div>

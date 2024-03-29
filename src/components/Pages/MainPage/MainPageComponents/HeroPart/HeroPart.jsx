@@ -2,8 +2,7 @@ import Slider from "react-slick";
 import slide_1_plant from "../../../../../assets/Images/HeroPart/slide1.png";
 import slide_2_plant from "../../../../../assets/Images/HeroPart/product-1.png";
 import slide_3_plant from "../../../../../assets/Images/HeroPart/product-7.png";
-import "./HeroPart.scss"
-import Button from "../../../../SharedComponents/Button/Button"
+import "./HeroPart.scss";
 
 const HeroPart = () => {
   const settings = {
@@ -12,7 +11,7 @@ const HeroPart = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true
+    autoplay: true,
   };
 
   const slides = [
@@ -23,7 +22,7 @@ const HeroPart = () => {
       planetColor: "PLANET",
       heroFooter:
         "We are an online plant shop offering a wide range of cheap and trendy plants. Use our plants to create an unique Urban Jungle. Order your favorite plants!",
-      buttonText: "SHOP NOW",
+
       image: slide_1_plant,
     },
     {
@@ -33,7 +32,6 @@ const HeroPart = () => {
       planetColor: "greenery",
       heroFooter:
         "Plants not only add a touch of nature to your home, but also purify the air, reduce stress, and boost creativity. Explore our selection of plants to find the perfect ones for your space.",
-      buttonText: "SHOP NOW",
       image: slide_2_plant,
     },
     {
@@ -43,7 +41,6 @@ const HeroPart = () => {
       planetColor: "Natural Beauty",
       heroFooter:
         "Our plants aren't just beautiful, they're also versatile. From modern to bohemian, our collection of plants can complement any decor style. Shop now to find the perfect plant for your space.",
-      buttonText: "SHOP NOW",
       image: slide_3_plant,
     },
   ];
@@ -65,7 +62,6 @@ const HeroPart = () => {
                     </p>
                   </div>
                   <div className="hero-footer">{slide.heroFooter}</div>
-                  <Button className="shop-button">{slide.buttonText}</Button>
                 </div>
                 <div className="right-side">
                   <picture>

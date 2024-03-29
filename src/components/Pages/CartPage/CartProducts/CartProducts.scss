@@ -5,6 +5,14 @@
   gap: 50px;
   flex-direction: column;
 
+  .product-container {
+    height: 300px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
   .cart-product {
     background-color: $off-white;
     display: flex;

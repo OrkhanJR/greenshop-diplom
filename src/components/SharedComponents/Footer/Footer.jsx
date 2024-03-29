@@ -60,7 +60,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer-bottom">
-          © 2021 GreenShop. All Rights Reserved.
+          © 2024 GreenShop. All Rights Reserved.
         </div>
       </div>
     </>

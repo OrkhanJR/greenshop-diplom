@@ -14,6 +14,9 @@ const BlogPage = () => {
   return (
     <>
       <Header />
+
+        <h1> Welcome to our Blog!</h1>
+        <hr />
       <div className="blog-wrapper">
         <div className="care-tips">
           <h3>Essential Care Tips for Thriving Cacti and Succulents</h3>
@@ -221,7 +224,7 @@ const BlogPage = () => {
           </p>
         </div>
 
-        <div className="care-tips">
+        <div className="care-tips" id="room-by-room">
           <h3>Best Houseplants Room by Room</h3>
           <img src={card4} alt="blog" />
           <div>

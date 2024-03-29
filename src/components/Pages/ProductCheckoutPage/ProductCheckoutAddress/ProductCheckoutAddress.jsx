@@ -23,7 +23,7 @@ const ProductCheckoutAddress = () => {
 
   const handlePayment = () => {
     dispatch(clearCart());
-    alert("We received your order!")
+    alert("We received your order!");
     navigate("/");
   };
 
@@ -36,6 +36,9 @@ const ProductCheckoutAddress = () => {
   return (
     <form>
       <div className="address-wrapper">
+        <p>
+          <img src={required} alt="required" /> - Required Fields
+        </p>
         <h3>Billing Address</h3>
 
         <div className="inputs">

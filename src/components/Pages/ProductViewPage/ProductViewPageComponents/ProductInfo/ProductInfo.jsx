@@ -12,9 +12,7 @@ const ProductInfo = () => {
   const product = products.find(
     (product) => product.id === parseInt(productId)
   );
-  const [selectedSize, setSelectedSize] = useState(
-    product ? product.sizes[0] : null
-  );
+  const [selectedSize] = useState(product ? product.sizes[0] : null);
 
   const navigate = useNavigate();
 
@@ -71,23 +69,6 @@ const ProductInfo = () => {
           <div className="short-desc">
             <div className="short-desc-title">Short Description: </div>
             <div className="desc">{product.shortDescription}</div>
-          </div>
-
-          <div className="sizes">
-            <p>Size: </p>
-            <div className="size-buttons">
-              {product.sizes.map((size) => (
-                <button
-                  key={size.size}
-                  onClick={() => setSelectedSize(size)}
-                  className={
-                    selectedSize === size ? "selected" : "not-selected"
-                  }
-                >
-                  {size.size}
-                </button>
-              ))}
-            </div>
           </div>
 
           <div className="count-wrapper">

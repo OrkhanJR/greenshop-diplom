@@ -1,6 +1,6 @@
 import PlantCard1 from "../../../../../assets/Images/PlantCards/LeftCardImage.png";
 import PlantCard2 from "../../../../../assets/Images/PlantCards/RightCardImage.png";
-import arrow from "../../../../../assets/Images/PlantCards/Arrow - Right.svg";
+
 const PlantCards = () => {
   const cards = [
     {
@@ -30,9 +30,6 @@ const PlantCards = () => {
             <div className="card-main">
               <span>{card.title}</span>
             </div>
-            <button className="card-button">
-              Find More <img src={arrow} alt="" />
-            </button>
           </div>
         </div>
       ))}

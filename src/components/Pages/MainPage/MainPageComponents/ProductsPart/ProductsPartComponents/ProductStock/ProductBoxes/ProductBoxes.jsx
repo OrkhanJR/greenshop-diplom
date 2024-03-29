@@ -111,7 +111,9 @@ const ProductBoxes = () => {
     <>
       <div className="product-boxes-wrapper">
         {currentProducts.map((product) => (
-          <div key={product.id} className="product-box">
+          <div key={product.id} className="product-box" onClick={() => {
+            navigateToView(product.id);
+          }}>
             <div className="img-container">
               {product.sale && (
                 <div className="product-discount">
@@ -129,14 +131,7 @@ const ProductBoxes = () => {
                 />
               </div>
             </div>
-            <div
-              className="product-title"
-              onClick={() => {
-                navigateToView(product.id);
-              }}
-            >
-              {product.name}
-            </div>
+            <div className="product-title">{product.name}</div>
 
             <div
               className="product-price"
