@@ -3,7 +3,6 @@ import card1 from "../../../../../assets/Images/BlogPart/card1.png";
 import card2 from "../../../../../assets/Images/BlogPart/card2.png";
 import card3 from "../../../../../assets/Images/BlogPart/card3.png";
 import card4 from "../../../../../assets/Images/BlogPart/card4.png";
-import link_arrow from "../../../../../assets/Images/BlogPart/link-arrow.svg";
 
 const BlogPart = () => {
   const blogCards = [
@@ -57,9 +56,7 @@ const BlogPart = () => {
               <span className="date">{blogCard.date}</span>
               <div className="card_header">{blogCard.header}</div>
               <div className="card_main_text">{blogCard.main}</div>
-              <div className="link">
-                Read More <img src={link_arrow} alt="/" />
-              </div>
+              <div className="link">Read More</div>
             </div>
           </div>
         ))}

@@ -64,7 +64,7 @@ const ProductInfo = () => {
           </div>
 
           <div className="price">
-            {calculatePrice(selectedSize.price, product.discountPercentage)}
+            {`$${calculatePrice(selectedSize.price, product.discountPercentage)}`}
           </div>
           <div className="short-desc">
             <div className="short-desc-title">Short Description: </div>

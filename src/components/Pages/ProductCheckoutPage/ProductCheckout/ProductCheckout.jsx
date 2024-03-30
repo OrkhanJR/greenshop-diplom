@@ -5,7 +5,6 @@ import {
   selectItems,
 } from "../../../../redux/slices/cartSlice";
 import { useEffect, useState } from "react";
-import paymentMethods from "../../../../assets/Images/Checkout/image 17.png";
 
 const ProductCheckout = () => {
   const totalPrice = useSelector(selectTotalPrice);
@@ -17,7 +16,6 @@ const ProductCheckout = () => {
 
   const [coupon, setCoupon] = useState("");
   const [discountedPrice, setDiscountedPrice] = useState(totalPrice);
-  const [paymentMethod, setPaymentMethod] = useState("card");
 
   const totalPriceWithShipping = () => {
     return discountedPrice + 16;
@@ -109,26 +107,7 @@ const ProductCheckout = () => {
 
         <div className="payment-container">
           <div className="payment-method">
-            <input
-              type="radio"
-              id="payment-card"
-              value="card"
-              checked={paymentMethod === "card"}
-              onChange={() => setPaymentMethod("card")}
-            />
-            <label htmlFor="payment-card">
-              <img src={paymentMethods} alt="payment method" />
-            </label>
-          </div>
-
-          <div className="payment-method">
-            <input
-              type="radio"
-              id="payment-cash"
-              value="cash"
-              checked={paymentMethod === "cash"}
-              onChange={() => setPaymentMethod("cash")}
-            />
+            <input type="radio" id="payment-cash" value="cash" checked={true} />
             <label htmlFor="payment-cash">Cash on delivery</label>
           </div>
         </div>

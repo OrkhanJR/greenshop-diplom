@@ -9,14 +9,26 @@
 }
 
 @media (max-width: 1170px) {
-    .cart-page-wrapper {
-        flex-direction: column;
-        align-items: center;
-    }
+  .cart-page-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 @media (max-width: 760px) {
-    .product-image {
-        display: none;
+  .product-image {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .cart-products-wrapper {
+    .cart-product {
+      font-size: 12px;
+      padding: 0 12px;
     }
+  }
+  .product-image {
+    display: none;
+  }
 }

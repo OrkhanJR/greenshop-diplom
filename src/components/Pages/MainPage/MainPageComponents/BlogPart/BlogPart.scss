@@ -55,6 +55,9 @@
         }
         .link {
           margin-top: 9px;
+          &:hover {
+            color: $green;
+          }
 
           a {
             text-decoration: none;
