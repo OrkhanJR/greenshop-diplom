@@ -12,7 +12,11 @@ import popUpCartHover from "../../../../../../../../assets/Images/header/cart-ho
 import { useNavigate } from "react-router-dom";
 import { addToCart } from "../../../../../../../../redux/slices/cartSlice";
 
-const productsPerPage = 9;
+
+
+const productsPerPage = 9
+ 
+
 
 const ProductBoxes = () => {
   const selectedFilter = useSelector(selectSelectedFilter);
@@ -27,6 +31,8 @@ const ProductBoxes = () => {
   useEffect(() => {
     dispatch(setSelectedCategory("All"));
   }, [dispatch]);
+
+
 
   useEffect(() => {
     let filtered = [...products];

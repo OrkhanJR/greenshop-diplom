@@ -3,3 +3,20 @@
   margin-top: 90px;
   padding: 0 120px;
 }
+
+
+@media (max-width: 1080px) {
+  .info-wrapper {
+     .image {
+      display: none;
+     }
+
+     .count-wrapper {
+      flex-direction: column;
+     }
+
+     .counter-wrapper {
+      flex-direction: column;
+     }
+  }
+}

@@ -3,6 +3,18 @@
 
 .checkout-wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding: 20px;
+}
+
+@media (max-width: 1120px) {
+    .checkout-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        
+        .checkout-container {
+            order: -1;
+        }
+    }
 }

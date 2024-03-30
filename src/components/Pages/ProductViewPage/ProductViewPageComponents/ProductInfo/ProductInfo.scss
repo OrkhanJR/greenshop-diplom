@@ -22,7 +22,7 @@ button {
       display: flex;
       align-items: center;
       gap: 20px;
-
+      flex-wrap: wrap;
       span {
         color: $green;
         font-weight: 700;
@@ -42,6 +42,7 @@ button {
       margin-top: 20px;
       .desc {
         color: $gray;
+        min-width: 250px;
       }
     }
     .sizes {

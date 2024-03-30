@@ -70,3 +70,14 @@
     border-color: green;
   }
 }
+
+
+@media (max-width: 426px) {
+.header-wrapper {
+  .links-wrapper {
+    .links {
+      gap: 20px;
+    }
+  }
+}
+}

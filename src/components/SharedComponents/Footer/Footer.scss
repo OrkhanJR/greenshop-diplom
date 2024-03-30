@@ -57,3 +57,39 @@
     color: #3d3d3d;
   }
 }
+
+@media (max-width: 770px) {
+    .footer-wrapper {
+      font-size: 11px;
+      .contacts-wrapper {
+        flex-direction: column;
+      }
+    }
+}
+
+@media (max-width: 550px) {
+  .footer-wrapper {
+    font-size: 11px;
+
+    .icon-boxes {
+      gap: 10px;
+    }
+    .contacts-wrapper {
+      flex-direction: column;
+    }
+  }
+}
+
+@media (max-width: 426px) {
+  .icon-boxes {
+    flex-direction: column;
+  }
+  .footer-wrapper {
+    font-size: 10px;
+    .contacts-wrapper {
+      flex-direction: column;
+      height: auto;
+      font-size: 12px;
+    }
+  }
+}
